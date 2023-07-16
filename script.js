@@ -20,7 +20,12 @@ function generatePassword() {
     return;
   }
 
+  var nums = confirm("Click Ok to confirm including numeric characters.");
+  if(nums === false) {
+    alert("Password must include numeric characters. Please try again.");
+  }
 
+  var lower = confirm("Click OK to confirm including lowercase characters.");
 
   // 2. Validate the input
 
