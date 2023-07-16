@@ -15,17 +15,14 @@ function generatePassword() {
   
   //    b. Lowercase, Uppercase, numbers, special characters
   var specialChars = confirm("Click Ok to confirm including special characters.");
-  if(specialChars === false) {
-    alert("Password must include special characters. Please try again.");
-    return;
-  }
+  // if(specialChars === false) {
+  //   alert("Password must include special characters. Please try again.");
+  //   return;
+  // }
 
   var nums = confirm("Click Ok to confirm including numeric characters.");
-  if(nums === false) {
-    alert("Password must include numeric characters. Please try again.");
-  }
-
   var lower = confirm("Click OK to confirm including lowercase characters.");
+  var upper = confirm("Click OK to confirm including uppercase characters.");
 
   // 2. Validate the input
 
