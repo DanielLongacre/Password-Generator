@@ -1,11 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
 //Define Generate Password function
 function generatePassword() {
 
   //Create variable to hold password
   var password = "";
+
 
   // 1. Prompt the user for password criteria
   //    a. Password length
@@ -15,6 +17,7 @@ function generatePassword() {
     return;
   }
   
+
   //    b. Lowercase, Uppercase, numbers, special characters
   var lower = confirm("Click OK to confirm including lowercase characters.");
   var upper = confirm("Click OK to confirm including uppercase characters.");
@@ -28,6 +31,8 @@ function generatePassword() {
   var numsOnly = "123456789";
   var specialOnly = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   var lowerUpper = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowerNums = "abcdefghijklmnopqrstuvwxyz123456789";
+
 
   // 2. Validate the input
   if(lower === true && upper === false && nums === false && specialChars === false) {
@@ -50,20 +55,18 @@ function generatePassword() {
       var rand = Math.floor(Math.random() * specialOnly.length);
       password += specialOnly.substring(rand, rand + 1);
     }
-  } 
-  
-  
-  
-  else if(lower === true && upper === true && nums === false && specialChars === false) {
+  } else if(lower === true && upper === true && nums === false && specialChars === false) {
     for(var i = 0; i < len; i++) {
       var rand = Math.floor(Math.random() * lowerUpper.length);
       password += lowerUpper.substring(rand, rand + 1);
     }
-  }
+  } else if(lower === true && upper === false && nums === true && specialChars === false) {
+    for(var i = 0; i < len; i++) {
+      var rand = Math.floor(Math.random() * lowerNums.length);
+      password += lowerNums.substring(rand, rand + 1);
+    }
+  } 
 
-  // } else if () {
-
-  // }
 
 
 
