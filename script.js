@@ -3,17 +3,21 @@ var generateBtn = document.querySelector("#generate");
 
 //Define Generate Password function
 function generatePassword() {
-  console.log("Button has been clicked!");
-
   // 1. Prompt the user for password criteria
   //    a. Password length
+  var len = prompt("How many characters would you like your password to contain?");
+  console.log(len);
+  if(len < 8 || len > 128) {
+    alert("The length of your password must be between 8 and 128 characters. Please try again.");
+    return;
+  }
   //    b. Lowercase, Uppercase, numbers, special characters
   // 2. Validate the input
+
+
+
+
   // 3. Display password to the page.
-
-
-
-  
   return "Generated Password will go here!";
 }
 
