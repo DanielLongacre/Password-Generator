@@ -20,24 +20,27 @@ function generatePassword() {
   var upper = confirm("Click OK to confirm including uppercase characters.");
   var nums = confirm("Click Ok to confirm including numeric characters.");
   var specialChars = confirm("Click Ok to confirm including special characters.");
-  // if(specialChars === false) {
-  //   alert("Password must include special characters. Please try again.");
-  //   return;
-  // }
 
 
   //Arrays holding the different combinations
   var lowerOnly = "abcdefghijklmnopqrstuvwxyz";
-  
+  var upperOnly = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numsOnly = "123456789";
+  var specialOnly = "";
+  var lowerUpper = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   // 2. Validate the input
-  if( lower === true && upper === false && nums === false && specialChars === false) {
+  if(lower === true && upper === false && nums === false && specialChars === false) {
     for(var i = 0; i < len; i++) {
       var rand = Math.floor(Math.random() * lowerOnly.length);
       password += lowerOnly.substring(rand, rand + 1);
     }
+  } else if(lower === true && upper === true && nums === false && specialChars === false) {
+    for(var i = 0; i < len; i++) {
+      var rand = Math.floor(Math.random() * lowerUpper.length);
+      password += lowerUpper.substring(rand, rand + 1);
+    }
   }
-  // } else if () {
 
   // } else if () {
 
