@@ -44,8 +44,13 @@ function generatePassword() {
 
 
   // 2. Validate the input
+  //None-------------------------------------------------------------------------------
+  if(lower === false && upper === false && nums === false && specialChars === false) {
+    alert("You must choose at least one of the conditions. Please try again.");
+    password = "Error: Please try again";
+    }
   //Singles-------------------------------------------------------------------------------
-  if(lower === true && upper === false && nums === false && specialChars === false) {
+  else if(lower === true && upper === false && nums === false && specialChars === false) {
     for(var i = 0; i < len; i++) {
       var rand = Math.floor(Math.random() * lowerOnly.length);
       password += lowerOnly.substring(rand, rand + 1);
