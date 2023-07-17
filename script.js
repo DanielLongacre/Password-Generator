@@ -34,6 +34,7 @@ function generatePassword() {
   var lowerNums = "abcdefghijklmnopqrstuvwxyz123456789";
   var lowerSpecial = "abcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   var upperNums = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+  var upperSpecial = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
   // 2. Validate the input
   if(lower === true && upper === false && nums === false && specialChars === false) {
@@ -75,6 +76,11 @@ function generatePassword() {
     for(var i = 0; i < len; i++) {
       var rand = Math.floor(Math.random() * upperNums.length);
       password += upperNums.substring(rand, rand + 1);
+    }
+  } else if(lower === false && upper === true && nums === false && specialChars === true) {
+    for(var i = 0; i < len; i++) {
+      var rand = Math.floor(Math.random() * upperSpecial.length);
+      password += upperSpecial.substring(rand, rand + 1);
     }
   } 
 
