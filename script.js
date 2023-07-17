@@ -44,6 +44,7 @@ function generatePassword() {
 
 
   // 2. Validate the input
+  //Singles-------------------------------------------------------------------------------
   if(lower === true && upper === false && nums === false && specialChars === false) {
     for(var i = 0; i < len; i++) {
       var rand = Math.floor(Math.random() * lowerOnly.length);
@@ -64,7 +65,7 @@ function generatePassword() {
       var rand = Math.floor(Math.random() * specialOnly.length);
       password += specialOnly.substring(rand, rand + 1);
     }
-    //-------------------------------------------------------------------------------
+  //Doubles-------------------------------------------------------------------------------
   } else if(lower === true && upper === true && nums === false && specialChars === false) {
     for(var i = 0; i < len; i++) {
       var rand = Math.floor(Math.random() * lowerUpper.length);
@@ -95,11 +96,34 @@ function generatePassword() {
       var rand = Math.floor(Math.random() * numsSpecial.length);
       password += numsSpecial.substring(rand, rand + 1);
     }
-    //-------------------------------------------------------------------------------
-
-  } 
-
-
+  //Triples-------------------------------------------------------------------------------
+  } else if(lower === true && upper === true && nums === true && specialChars === false) {
+    for(var i = 0; i < len; i++) {
+      var rand = Math.floor(Math.random() * lowerUpperNumeric.length);
+      password += lowerUpperNumeric.substring(rand, rand + 1);
+    }
+  } else if(lower === true && upper === true && nums === false && specialChars === true) {
+    for(var i = 0; i < len; i++) {
+      var rand = Math.floor(Math.random() * lowerUpperSpecial.length);
+      password += lowerUpperSpecial.substring(rand, rand + 1);
+    }
+  } else if(lower === true && upper === false && nums === true && specialChars === true) {
+    for(var i = 0; i < len; i++) {
+      var rand = Math.floor(Math.random() * lowerNumericSpecial.length);
+      password += lowerNumericSpecial.substring(rand, rand + 1);
+    }
+  } else if(lower === false && upper === true && nums === true && specialChars === true) {
+    for(var i = 0; i < len; i++) {
+      var rand = Math.floor(Math.random() * upperNumericSpecial.length);
+      password += upperNumericSpecial.substring(rand, rand + 1);
+    }
+  //ALL-------------------------------------------------------------------------------
+  } else if(lower === true && upper === true && nums === true && specialChars === true) {
+    for(var i = 0; i < len; i++) {
+      var rand = Math.floor(Math.random() * lowerUpperNumericSpecial.length);
+      password += lowerUpperNumericSpecial.substring(rand, rand + 1);
+    }
+  }
 
 
   // 3. Display password to the page.
